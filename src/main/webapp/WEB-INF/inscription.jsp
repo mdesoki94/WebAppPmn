@@ -43,18 +43,18 @@
     <input type="date" name="date" class="form-control" id="date" >
   </div>
 
-<%--  <div class="form-check">--%>
-<%--    <input class="form-check-input" type="radio" name="genre" id="homme">--%>
-<%--    <label class="form-check-label" for="homme">--%>
-<%--      Homme--%>
-<%--    </label>--%>
-<%--  </div>--%>
-<%--  <div class="form-check">--%>
-<%--    <input class="form-check-input" type="radio" name="genre" id="femme">--%>
-<%--    <label class="form-check-label" for="femme">--%>
-<%--      Femme--%>
-<%--    </label>--%>
-<%--  </div>--%>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="genre" id="homme" value="homme">
+    <label class="form-check-label" for="homme">
+      Homme
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="genre" id="femme" value="femme">
+    <label class="form-check-label" for="femme">
+      Femme
+    </label>
+  </div>
   <div class="mb-3">
     <label for="password" class="form-label">Mot de passe</label>
     <input type="password" name="password" class="form-control" id="password">
@@ -67,11 +67,12 @@
       String prenom = (String) request.getAttribute("prenom");
       String email = (String) request.getAttribute("email");
       String date= (String) request.getAttribute("date");
+      String genre = (String) request.getAttribute("genre");
       String password = (String) request.getAttribute("password");
-      if(nom == null&& prenom == null && email == null && date ==null && password == null){
+      if(nom == null&& prenom == null && email == null && date ==null && genre ==null && password == null){
         out.println(" ");
       }else{
-        out.println(nom+" "+prenom+" "+ email+" "+date+" "+password);
+        out.println(nom+" "+prenom+" "+ email+" "+date+" "+genre+" "+password);
       }
     %>
   </p>

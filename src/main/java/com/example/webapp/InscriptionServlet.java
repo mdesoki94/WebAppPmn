@@ -32,7 +32,7 @@ public class InscriptionServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
         Date date = new Date(l);
-
+        String genre = request.getParameter("genre");
         String password = request.getParameter("password");
         String envoyer = request.getParameter("envoyer");
 
@@ -40,6 +40,7 @@ public class InscriptionServlet extends HttpServlet {
         request.setAttribute("prenom",prenom);
         request.setAttribute("email",email);
         request.setAttribute("date",birth);
+        request.setAttribute("genre",genre);
         request.setAttribute("password",password);
         request.setAttribute("envoyer",envoyer);
         this.getServletContext().getRequestDispatcher("/WEB-INF/inscription.jsp").forward(request, response);
