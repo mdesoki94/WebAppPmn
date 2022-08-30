@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 
 
 @WebServlet("/compteur")
-public class HelloServlet extends HttpServlet {
+public class CompteurServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
