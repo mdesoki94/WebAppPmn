@@ -1,28 +1,29 @@
 package com.example.webapp;
-
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.StringTokenizer;
 
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+@WebServlet("/compteur")
 public class HelloServlet extends HttpServlet {
-    private String message;
+    private static final long serialVersionUID = 1L;
 
-    public void init() {
-        message = "Hello World!";
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+        this.getServletContext().getRequestDispatcher("/WEB-INF/compteurDeMots.jsp").forward(request,response);
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, ServletException {
+        String message = req.getParameter("message");
+        StringTokenizer res = new StringTokenizer(message," ");
+        req.setAttribute("resultat", String.valueOf(res.countTokens()));
+        this.getServletContext().getRequestDispatcher("/WEB-INF/compteurDeMots.jsp").forward(req, resp);
 
-        // Hello
-        PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
-        out.println("</body></html>");
     }
 
-    public void destroy() {
-    }
 }
