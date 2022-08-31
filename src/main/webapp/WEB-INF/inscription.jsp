@@ -59,6 +59,30 @@
     <label for="password" class="form-label">Mot de passe</label>
     <input type="password" name="password" class="form-control" id="password">
   </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" name="check" id="ps5" value="ps5">
+    <label class="form-check-label" for="ps5">
+      PS5
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" name="check2" id="xbox" value="xbox">
+    <label class="form-check-label" for="xbox">
+      XBOX ONE
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" name="check3" id="switch" value="switch">
+    <label class="form-check-label" for="switch">
+      SWITCH
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" name="check4" id="ps4" value="ps4">
+    <label class="form-check-label" for="ps4">
+      PS4
+    </label>
+  </div>
    <input type="submit" name="envoyer" value="Envoyer">
 </form>
   <p>
@@ -69,10 +93,15 @@
       String date= (String) request.getAttribute("date");
       String genre = (String) request.getAttribute("genre");
       String password = (String) request.getAttribute("password");
-      if(nom == null&& prenom == null && email == null && date ==null && genre ==null && password == null){
+      String check = (String) request.getAttribute("check");
+      String check2 = (String) request.getAttribute("check2");
+      String check3 = (String) request.getAttribute("check3");
+      String check4 = (String) request.getAttribute("check4");
+      if(nom == null&& prenom == null && email == null && date ==null && genre ==null && password == null && check == null && check2 == null && check3 == null && check4 == null){
         out.println(" ");
-      }else{
-        out.println(nom+" "+prenom+" "+ email+" "+date+" "+genre+" "+password);
+      }
+      else{
+        out.println(nom+" "+prenom+" "+ email+" "+date+" "+genre+" "+password+" "+check+" "+check2+" "+check3+" "+check4);
       }
     %>
   </p>

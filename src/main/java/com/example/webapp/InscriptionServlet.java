@@ -34,14 +34,22 @@ public class InscriptionServlet extends HttpServlet {
         Date date = new Date(l);
         String genre = request.getParameter("genre");
         String password = request.getParameter("password");
+        String check = request.getParameter("check");
+        String check2 = request.getParameter("check2");
+        String check3 = request.getParameter("check3");
+        String check4 = request.getParameter("check4");
         String envoyer = request.getParameter("envoyer");
 
-        request.setAttribute("nom",nom);
-        request.setAttribute("prenom",prenom);
+        request.setAttribute("nom",nom.toUpperCase());
+        request.setAttribute("prenom",prenom.substring(0,1).toUpperCase()+prenom.substring(1));
         request.setAttribute("email",email);
         request.setAttribute("date",birth);
         request.setAttribute("genre",genre);
         request.setAttribute("password",password);
+        request.setAttribute("check",check);
+        request.setAttribute("check2",check2);
+        request.setAttribute("check3",check3);
+        request.setAttribute("check4",check4);
         request.setAttribute("envoyer",envoyer);
         this.getServletContext().getRequestDispatcher("/WEB-INF/inscription.jsp").forward(request, response);
 
