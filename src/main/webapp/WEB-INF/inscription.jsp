@@ -84,8 +84,10 @@
     </label>
   </div>
    <input type="submit" name="envoyer" value="Envoyer">
+  <br> <br>
 </form>
-  <p>
+  <br>
+
     <%
       String nom = (String) request.getAttribute("nom");
       String prenom = (String) request.getAttribute("prenom");
@@ -101,7 +103,17 @@
         out.println(" ");
       }
       else{
-        out.println(nom+" "+prenom+" "+ email+" "+date+" "+genre+" "+password+" "+check+" "+check2+" "+check3+" "+check4);
+        out.println(nom+"</br>");
+        out.println(prenom+"</br>");
+        out.println(email+"</br>");
+        out.println(date+"</br>");
+        out.println(genre+"</br>");
+        out.println(password+"</br>");
+        out.println(check+"</br>");
+        out.println(check2+"</br>");
+        out.println(check3+"</br>");
+        out.println(check4);
+
       }
     %>
   </p>
