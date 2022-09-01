@@ -38,8 +38,8 @@
             <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
         </jsp-property-group>
         <taglib>
-            <taglib-uri>/WEB-INF/isPrime</taglib-uri>
-            <taglib-location>/WEB-INF/isPrime.tld</taglib-location>
+            <taglib-uri>/WEB-INF/Premier</taglib-uri>
+            <taglib-location>/WEB-INF/Premier.tld</taglib-location>
         </taglib>
     </jsp-config>
 </web-app>
