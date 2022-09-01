@@ -19,12 +19,12 @@
         <servlet-class>com.example.webapp.AccueilServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Main</servlet-name>
+        <servlet-name>NombreServlet</servlet-name>
         <servlet-class>com.example.webapp.NombreServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Main</servlet-name>
-        <url-pattern>/index</url-pattern>
+        <servlet-name>NombreServlet</servlet-name>
+        <url-pattern>/premier1</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
