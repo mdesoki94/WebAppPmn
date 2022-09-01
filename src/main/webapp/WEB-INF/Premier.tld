@@ -3,7 +3,7 @@
     <display-name>Custom EL Functions</display-name>
     <tlib-version>1.0</tlib-version>
     <short-name>rm</short-name>
-    <uri>/WEB-INF/isPrime.tld</uri>
+    <uri>/WEB-INF/isPremier.tld</uri>
     <function>
         <name>Premier</name>
         <function-class>com.example.webapp.Premier</function-class>
