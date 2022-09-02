@@ -19,10 +19,9 @@
     Connection con =
             DriverManager.getConnection("jdbc:mysql://localhost/employee", "root",
                     "root");
-
-Statement st = con.createStatement();
-ResultSet rs = st.executeQuery(sql);
-rs.next();
+    Statement st = con.createStatement();
+    ResultSet rs = st.executeQuery(sql);
+    rs.next();
 %>
 Numéro Employé : <%= rs.getString(1) %> <br>
 Nom : <%= rs.getString(2) %> <br>
