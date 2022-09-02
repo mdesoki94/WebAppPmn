@@ -17,6 +17,8 @@ public class ConsoleJPA {
         System.out.println( "- Afficher liste de jeux ----------" );
         EntityTransaction trans = em.getTransaction();
         trans.begin();
+        GameEntityManager gameEntityManager = new GameEntityManager( "Mario");
+        em.persist( gameEntityManager );
         List<GameEntityManager> games = em.createQuery("select gamelist from GameEntityManager gamelist", GameEntityManager.class).getResultList();
         for( GameEntityManager game : games) {
             System.out.println( game );
