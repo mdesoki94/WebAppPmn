@@ -8,11 +8,10 @@ public class GameEntityManager {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "name")
-
     private String name;
 
     public GameEntityManager(String name) {
-        this.getName(name);
+        this.setName(name);
     }
 
     public GameEntityManager() {
